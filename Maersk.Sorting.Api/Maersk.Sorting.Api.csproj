@@ -7,7 +7,49 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Entities\NewFolder\**" />
+    <Content Remove="Entities\NewFolder\**" />
+    <EmbeddedResource Remove="Entities\NewFolder\**" />
+    <None Remove="Entities\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20201020222316_Initial.cs" />
+    <Compile Remove="Migrations\20201020222316_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20201020223048_Initial.cs" />
+    <Compile Remove="Migrations\20201020223048_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20201021054648_Initial.cs" />
+    <Compile Remove="Migrations\20201021054648_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20201025195329_Initial.cs" />
+    <Compile Remove="Migrations\20201025195329_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20201025211408_initial.cs" />
+    <Compile Remove="Migrations\20201025211408_initial.Designer.cs" />
+    <Compile Remove="Migrations\20201025211921_initial.cs" />
+    <Compile Remove="Migrations\20201025211921_initial.Designer.cs" />
+    <Compile Remove="Migrations\20201025222051_initial.cs" />
+    <Compile Remove="Migrations\20201025222051_initial.Designer.cs" />
+    <Compile Remove="Migrations\20201025222649_Initial.cs" />
+    <Compile Remove="Migrations\20201025222649_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20201025223202_initial.cs" />
+    <Compile Remove="Migrations\20201025223202_initial.Designer.cs" />
+    <Compile Remove="Migrations\20201025234456_Initial.cs" />
+    <Compile Remove="Migrations\20201025234456_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20201026023049_Initial.cs" />
+    <Compile Remove="Migrations\20201026023049_Initial.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hangfire" Version="1.7.17" />
+    <PackageReference Include="Hangfire.Core" Version="1.7.17" />
+    <PackageReference Include="Hangfire.MemoryStorage" Version="1.7.0" />
+    <PackageReference Include="Hangfire.SqlServer" Version="1.7.17" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 
