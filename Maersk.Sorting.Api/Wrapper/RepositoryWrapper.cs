@@ -22,8 +22,7 @@ namespace Maersk.Sorting.Api.Wrapper
                 }
                 return _SortRepo;
             }
-
-           
+          
 
         }
         public RepositoryWrapper(SortJobDbContext repositoryContext)

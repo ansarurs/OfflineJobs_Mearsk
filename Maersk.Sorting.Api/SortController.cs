@@ -74,6 +74,7 @@ namespace Maersk.Sorting.Api.Controllers
                 // Update the status as pending 
                 SortJob completedJob = new SortJob();
                 await _repoWrapper.SortJobRepository.Add(pendingJob);
+                _repoWrapper.Save();
                 await _sortJobProcessor.Enqueue(() => _sortJobProcessor.Process(pendingJob));
                 //SortJob completedJob = await _sortJobProcessor.Process(pendingJob);
                 // await _repository.Update<SortJob>(completedJob);

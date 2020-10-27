@@ -27,10 +27,8 @@ namespace Maersk.Sorting.Api
             services
                 .AddControllers()
                 .AddNewtonsoftJson(options => options.SerializerSettings.Converters.Add(new StringEnumConverter()));
-
-            services.AddSingleton<ISortJobProcessor, SortJobProcessor>();
             services.AddDbContext<SortJobDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SortJobDbConn")));
-            
+            services.AddScoped<ISortJobProcessor, SortJobProcessor>();
             services.AddScoped<IRepositoryWrappercs, RepositoryWrapper>();
             services.AddHangfire(x =>x.SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
                                   .UseSimpleAssemblyNameTypeSerializer()

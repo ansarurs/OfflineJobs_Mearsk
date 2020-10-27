@@ -16,12 +16,12 @@ namespace Maersk.Sorting.Api
     public class SortJobProcessor : ISortJobProcessor
     {
         private readonly ILogger<SortJobProcessor> _logger;
+        private IRepositoryWrappercs _repoWrapper;
 
-        
-        public SortJobProcessor(ILogger<SortJobProcessor> logger)
+        public SortJobProcessor(ILogger<SortJobProcessor> logger, IRepositoryWrappercs repositoryWrappercs)
         {
             _logger = logger;
-            
+            _repoWrapper = repositoryWrappercs;
         }
 
         public async Task<SortJob> Process(SortJob job)
@@ -44,7 +44,8 @@ namespace Maersk.Sorting.Api
                 sj.Duration = duration;
                 sj.Input = job.Input;
                 sj.Output= job.Output;
-
+            await  _repoWrapper.SortJobRepository.Update(sj);
+            _repoWrapper.Save();
             
             return sj;
         }
